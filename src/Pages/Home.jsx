@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import FormInput from "../components/FormInput";
 import { v4 as uuidv4 } from 'uuid';
 
+import "./Home.css";
+
 
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
@@ -23,6 +25,23 @@ function Home() {
   firebase.initializeApp(firebaseConfig);
   const ref = firebase.firestore().collection("kikis");
 
+
+  /*
+  birthdate !!! 
+  duty
+  from
+  until
+  workplace
+  birthLname
+  placeofbirth
+  insurance
+  bankacc
+  accholder
+  email
+
+
+
+  */
 
   function addToDB(newPerson) {
     ref
@@ -138,7 +157,7 @@ function Home() {
   };
 
   return (
-    <div /*className="app"*/>
+    <div className="app">
       <form onSubmit={handleSubmit}>
         <h1>Údaje pre personálne oddelenie SPR</h1>
         {inputs.map((input) => (
