@@ -101,7 +101,6 @@ function Home() {
       errorMessage:
         "Meno nesmie ostať prázdne a nesmie obsahovať žiadne špeciálne znaky",
       label: "Jméno",
-      pattern: "^[A-Za-z0-9]{2,16}$",
       required: true,
     },
 
