@@ -29,12 +29,12 @@ function Home() {
   /*
   birthdate !!! 
   duty
-  from
+  since
   until
   workplace
   birthLname
   placeofbirth
-  insurance
+  insuranceance
   bankacc
   accholder
   email
@@ -60,7 +60,20 @@ function Home() {
     lname: "",
     birthnum: "",
     address: "",
-    insur: "",
+    insurance: "",
+
+    //birthdate: "",
+    //duty: "",
+    //since: "",
+    //until: "",
+    //workplace: "",
+    //birthLname: "",
+    //placeofbirth: "",
+    //bankacc: "",
+    //accholder: "",
+    //email: ""
+
+
   });
 
   const optionss = [
@@ -105,24 +118,59 @@ function Home() {
     },
     {
       id: 3,
-      name: "birthnum",
-      type: "number",
-      // pattern: "^[0-9]{10}$",
-      min: "0",
-      max: "9999999999",
-      step: "11",
-      // onInput: {javascript: alert(this.value)},
-      // type: "text",
-      // pattern: "^[0-9]{10}$",
-
-      placeholder: "X X X X X X X X X X X",
-      errorMessage: "RČ musí byť deliteľné 11",
-      label: "RČ bez lomítka",
-
+      name: "email",
+      type: "email",
+      placeholder: "E-mail",
+      errorMessage:
+        "Zadejte prosím e-mailovou adresu v platném tvaru.",
+      label: "E-mail",
       required: true,
     },
     {
       id: 4,
+      name: "birthdate",
+      type: "date",
+      placeholder: "Datum narození",
+      errorMessage:
+        "Datum narození musí být platný",
+      label: "Datum narození",
+      required: true,
+    },
+    {
+      id: 5,
+      name: "birthnum",
+      type: "number",
+      min: "0",
+      max: "9999999999",
+      step: "11",
+      placeholder: "X X X X X X X X X X X",
+      errorMessage: "RČ musí byť deliteľné 11",
+      label: "RČ bez lomítka",
+      required: true,
+    },
+    {
+      id: 6,
+      name: "placeofbirth",
+      type: "text",
+      placeholder: "Místo narození",
+      errorMessage:
+        "Zadejte prosím místo narození",
+      label: "Místo narození",
+      required: true,
+    },
+    {
+      id: 7,
+      name: "birthLname",
+      type: "text",
+      placeholder: "Rodné (dřívější) příjmení",
+      errorMessage:
+        "Zadejte prosím Vaše rodné příjmení",
+      label: "Rodné příjmení",
+      required: true,
+    },
+
+    {
+      id: 8,
       name: "address",
       type: "text",
       placeholder: "Adresa bydliště",
@@ -130,17 +178,85 @@ function Home() {
       label: "Adresa bydliště",
       required: true,
     },
-
     {
-      id: 5,
-      name: "insur",
+      id: 9,
+      name: "insurance",
       type: "select",
-      placeholder: "Kód pojišťovny",
+      placeholder: "Kód Vaší pojišťovny",
       errorMessage: "..toto bude dropdown",
       label: "Kód pojišťovny",
       required: true,
       options: optionss,
     },
+    {
+      id: 10,
+      name: "duty",
+      type: "text",
+      placeholder: "Pracovní úkol",
+      errorMessage:
+        "Zadejte prosím Vaše rodné příjmení",
+      label: "Pracovní úkol (nepovinné)",
+      required: false,
+    },
+    {
+      id: 11,
+      name: "since",
+      type: "date",
+      placeholder: "První den pracovního poměru",
+      label: "Dohoda se uzavírá od",
+      required: true,
+      min: "2022-05-01",
+    },
+    {
+      id: 12,
+      name: "until",
+      type: "date",
+      placeholder: "Poslední den pracovního poměru",
+      label: "Dohoda se uzavírá do",
+      required: true,
+      min: "2022-05-01",
+      max: "2022-12-31",
+    },
+    {
+      id: 13,
+      name: "workplace",
+      type: "text",
+      placeholder: "Místo výkonu práce",
+      errorMessage:
+        "Zadejte prosím Vaše rodné příjmení",
+      label: "Místo výkonu práce (nepovinné)",
+      required: false,
+    },
+    {
+      id: 14,
+      name: "bankacc",
+      type: "text",
+      placeholder: "Číslo bankovního účtu",
+      errorMessage:
+        "Zadejte číslo účtu",
+      label: "Číslo bankovního účtu, na který bude vyplácená odměna",
+      required: true,
+    },
+    {
+      id: 15,
+      name: "accholder",
+      type: "text",
+      placeholder: "Vlastník účtu",
+      errorMessage:
+        "Zadejte vlastníka účtu",
+      label: "Vlastník uvedeného účtu",
+      required: true,
+    },
+    {
+      id: 16,
+      name: "dispo",
+      type: "checkbox",
+      errorMessage:
+        "Toto prohlášení je vyžadované.",
+      label: "Prohlašuji, že k tomuto účtu mám disponibilní právo.",
+      required: true,
+    },
+    
   ];
 
   const handleSubmit = (e) => {
