@@ -101,7 +101,6 @@ function Home() {
       errorMessage:
         "Meno nesmie ostať prázdne a nesmie obsahovať žiadne špeciálne znaky",
       label: "Jméno",
-      pattern: "^[A-Za-z0-9]{2,16}$",
       required: true,
     },
 
@@ -113,7 +112,6 @@ function Home() {
       errorMessage:
         "Prijmeni nesmie ostať prázdne a nesmie obsahovať žiadne špeciálne znaky",
       label: "Příjmení",
-      pattern: "^[A-Za-z0-9]{2,16}$",
       required: true,
     },
     {
@@ -183,9 +181,11 @@ function Home() {
       name: "insurance",
       type: "select",
       placeholder: "Kód Vaší pojišťovny",
-      errorMessage: "..toto bude dropdown",
+      errorMessage: "Kód musí obsahovať presne 3 číslice", // ..toto bude dropdown
       label: "Kód pojišťovny",
       required: true,
+      pattern: "^[0-9]{3}$",
+
       options: optionss,
     },
     {
